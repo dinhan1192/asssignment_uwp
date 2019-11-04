@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="Baithi_DinhVanHoangAn_UWP.Pages.ListNote"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Baithi_DinhVanHoangAn_UWP.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:entity="using:Baithi_DinhVanHoangAn_UWP.Entity"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <ListView x:ConnectionId='2' x:Name="ListViewNote">
+            <ListView.ItemTemplate>
+                <DataTemplate                         >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock FontSize="20" FontWeight="Bold" Text="{Binding Title}"></TextBlock>
+                        <NavigationViewItemSeparator Foreground="AliceBlue"></NavigationViewItemSeparator>
+                        <TextBlock FontSize="20" FontWeight="Bold" Text="{Binding Content}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <CommandBar VerticalAlignment="Bottom">
+            <!--<AppBarToggleButton Icon="Shuffle" Label="Shuffle" Click="AppBarButton_Click" />
+            <AppBarToggleButton Icon="RepeatAll" Label="Repeat" Click="AppBarButton_Click"/>-->
+            <AppBarSeparator/>
+            <AppBarButton x:ConnectionId='3' Icon="Add"  x:Name="CreateNote" Label="Play"                         >Create Note</AppBarButton>
+            <AppBarSeparator/>
+            <CommandBar.Content>
+                <TextBlock x:ConnectionId='4' x:Name="txtNowPlaying" Text="Chuc nang" Margin="12,14"/>
+            </CommandBar.Content>
+        </CommandBar>
+    </Grid>
+</Page>
+
